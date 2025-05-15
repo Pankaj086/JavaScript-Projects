@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white;">
+    <h1>BMI CALCULATOR</h1>
+
+    <form>
+        <label for="weight">Enter Weight: </label>
+        <input type="number" name="weight" placeholder="weight in kg" id="weight"/>
+
+        <label for="height">Enter Height: </label>
+        <input type="number" name="height" placeholder="Height in m" id="height"/>
+
+        <label for="submit">Calculate</label>
+        <input type="submit" name="submit"/>
+    </form>
+
+    <h1>Your BMI is: </h1>
+    <p class="bmi"></p>
+</body>
+
+<script>
+
+        const form = document.querySelector("form");
+
+        form.addEventListener('submit',(e)=>{
+            e.preventDefault();
+
+            const ht = document.getElementById("height").value;
+            const wt = document.getElementById("weight").value;
+            const bmi = parseInt(wt)/Math.pow(parseInt(ht),2);
+            const ele = document.querySelector(".bmi");
+            ele.append(document.createTextNode(`${bmi}`))
+        })
+
+        // const tag1 = document.querySelector("input[name='weight']");
+        // console.log(tag1);
+        // let wt;
+        // tag1.addEventListener('change',(e)=>{
+        //     console.log(e.target.value); 
+        //     wt = e.target.value;  
+        // })
+
+        // let ht;
+        // const tag2 = document.querySelector("input[name='height']");
+        // console.log(tag2);
+        // tag2.addEventListener('change',(e)=>{
+        //     console.log(e.target.value);  
+        //     ht = e.target.value;   
+        // })
+
+        // const cal = (wt,ht) => {
+        //     console.log(wt,ht);
+            
+        //     const bmi = parseInt(wt)/Math.pow(parseInt(ht),2);
+        //     console.log(bmi);
+        // }
+
+        // const tag3 = document.querySelector("input[type='submit']");
+        // tag3.addEventListener('click',cal(wt,ht));
+        
+</script>
+</html>
