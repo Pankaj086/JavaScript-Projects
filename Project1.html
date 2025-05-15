@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="width: 100%;">
+        <h1 style="color: white;">Color Changer</h1>
+        <div style="display: flex; gap: 20px; flex-direction: row;">
+            <div id="red" class="button"
+                style="width: 130px; height: 130px; background-color: red; border: 2px solid black;"></div>
+            <div id="blue" class="button"
+                style="width: 130px; height: 130px; background-color: blue; border: 2px solid black;"></div>
+            <div id="purple" class="button"
+                style="width: 130px; height: 130px; background-color: purple; border: 2px solid black;"></div>
+            <div id="magenta" class="button"
+                style="width: 130px; height: 130px; background-color: magenta; border: 2px solid black;"></div>
+        </div>
+    </div>
+</body>
+<script>
+    const buttons = document.querySelectorAll(".button");
+
+    console.log(buttons);
+
+    buttons.forEach((item) => {
+        // console.log(item);
+
+        item.addEventListener('click', (e) => {
+            // console.log(e.target);
+            const ele = e.target;
+            const color = ele.getAttribute("id");
+            document.body.style.backgroundColor = color;
+        })
+    })
+
+</script>
+
+</html>
